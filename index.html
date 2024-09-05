@@ -4,340 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DropZoneTourney - Esports Tournament</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-/* Logo Styling */
-.logo {
-    position: absolute;
-    top: 50px;
-    centre: 50px;
-    z-index: 2;
-}
-
-.logo img {
-    width: 15em; /* adjust the width to fit your logo */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 40px 80px rgba(0, 0, 50, 0.3);
-}
-        /* Body Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header Section */
-        header {
-            background: url('your-hero-image.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-        }
-
-        header h1 {
-            font-size: 3em;
-            color: #ff6600;
-            z-index: 2;
-            text-shadow: 2px 2px 4px #000;
-            margin: 20px;
-            text-align: center;
-        }
-
-        header p {
-            font-size: 1.5em;
-            z-index: 2;
-            text-align: center;
-        }
-
-        /* Navigation */
-        nav {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.2em;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #ff6600;
-            border-radius: 5px;
-        }
-
-        /* Main Content */
-        main {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        main h2 {
-            font-size: 2.5em;
-            color: #00ccff;
-            margin-bottom: 20px;
-        }
-
-        main p {
-            font-size: 1.2em;
-            color: #cccccc;
-            margin-bottom: 40px;
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 50px;
-            padding: 50px 0;
-            background: #1a1a1a;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        section h2 {
-            color: #ff9900;
-        }
-
-        /* Image and Text Section */
-        .image-text-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .image-text-section img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
-        }
-
-        .image-text-section .text {
-            max-width: 600px;
-            text-align: left;
-            margin-left: 20px;
-        }
-
-        .image-text-section .text p {
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            padding: 20px;
-            text-align: center;
-            color: #ccc;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        footer a {
-            color: #ff6600;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .slide-in {
-            transform: translateX(-100%);
-            animation: slideIn 1.5s forwards;
-        }
-
-        @keyframes slideIn {
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        /* Parallax Scrolling */
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 500px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            nav ul li a {
-                font-size: 1em;
-                padding: 8px 12px;
-            }
-
-            main h2 {
-                font-size: 2em;
-            }
-
-            .image-text-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .image-text-section .text {
-                margin-left: 0;
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            nav ul li a {
-                font-size: 0.9em;
-                padding: 6px 10px;
-            }
-
-            main h2 {
-                font-size: 1.5em;
-            }
-
-            main p {
-                font-size: 1em;
-            }
-        }
-    </style>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header section with logo -->
+    <header>
+        <img src="image.png" alt="DropZoneTourney Logo" class="logo"> <!-- Replace with your logo -->
+        <h1>Welcome to DropZoneTourney</h1>
+    </header>
 
- <!-- Header Section with Hero Image -->
-<header>
-    <!-- Logo -->
-    <div class="logo">
-        <img src="Picsart_24-09-03_20-27-13-176.png" alt="DropZoneTourney Logo">
-    </div>
-    <nav>
+    <!-- Section 1: About Us -->
+    <section class="section about-us">
+        <h2>About Us</h2>
+        <div class="animated-text">
+            DropZoneTourney is a platform for gamers to compete, win prizes, and showcase their skills in thrilling esports tournaments.
+        </div>
+    </section>
+
+    <!-- Section 2: Tournament Details -->
+    <section class="section tournament-details">
+        <h2>Tournament Details</h2>
+        <p>Join our upcoming event, featuring exciting matches and huge prizes. Watch live streams and compete for glory.</p>
+    </section>
+
+    <!-- Section 3: Rules -->
+    <section class="section rules">
+        <h2>Rules</h2>
         <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#tournaments">Tournaments</a></li>
-            <li><a href="#teams">Teams</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li>Register before the tournament starts.</li>
+            <li>No cheating or exploiting game bugs.</li>
+            <li>Respect all players and show good sportsmanship.</li>
         </ul>
-    </nav>
-    <div class="content">
-        <h1 class="fade-in">Welcome to DropZoneTourney</h1>
-        <p class="fade-in">Conquer the Zone, Claim the Crown</p>
-    </div>
-</header>
+    </section>
 
-    <!-- Main Content -->
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>
-We are passionate about esports and dedicated to creating an exciting and competitive platform for gamers to showcase their skills. Our tournament series offers a unique and thrilling experience for both participants and spectators.
+    <!-- Section 4: Live Stream -->
+    <section class="section live-stream">
+        <h2>Live Stream</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" title="Live stream" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-We strive to provide a fair and inclusive environment for all players, regardless of their skill level. Our goal is to foster a strong sense of community within the esports world and to promote healthy competition and sportsmanship.
+    <!-- Section 5: Prizes -->
+    <section class="section prizes">
+        <h2>Prizes</h2>
+        <p>1st Place: ₹1,00,000 + Trophy<br>2nd Place: ₹50,000<br>MVP: ₹25,000</p>
+    </section>
 
-With a focus on innovation and excellence, we aim to deliver unforgettable tournaments that leave a lasting impact on the esports industry. Join us and be part of something extraordinary            </p>
-        </section>
+    <!-- Section 6: Past Winners -->
+    <section class="section past-winners">
+        <h2>Past Winners</h2>
+        <ul>
+            <li>2023: Team Phoenix</li>
+            <li>2022: Team Ares</li>
+            <li>2021: Team Nemesis</li>
+        </ul>
+    </section>
 
-        <section id="tournaments" class="parallax" style="background-image: url('your-tournament-image.jpg');">
-            <h2>Upcoming Tournaments</h2>
-            <p class="slide-in">Don't miss out on our epic events. Get ready to show your skills!</p>
-        </section>
+    <!-- Footer Section: Social Links -->
+    <footer>
+        <p>Follow us on:</p>
+        <div class="social-links">
+            <a href="https://instagram.com">Instagram</a> |
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://twitter.com">X</a> |
+            <a href="https://whatsapp.com">WhatsApp</a> |
+            <a href="https://telegram.org">Telegram</a> |
+            <a href="https://reddit.com">Reddit</a> |
+            <a href="https://threads.net">Threads</a> |
+            <a href="https://twitch.tv">Twitch</a> |
+            <a href="https://kick.com">Kick Live</a> |
+            <a href="https://discord.com">Discord</a> |
+            <a href="https://youtube.com">YouTube</a>
+        </div>
+        <p>&copy; 2024 DropZoneTourney. All rights reserved.</p>
+    </footer>
 
-        <section id="teams" class="image-text-section">
-            <img src="your-team-image.jpg" alt="Top Teams">
-            <div class="text">
-                <h2>Top Teams</h2>
-                <p>
-                    The fiercest competitors from all over the globe. Will you be the next champion?
-                </p>
-            </div>
-        </section>
-
-        <section id="news">
-            <h2>Latest News</h2>
-            <p>Stay updated with the latest happenings in the world of esports.</p>
-        </section>
-        
-            <section id="watch-live">
-    <h2>Watch Live</h2>
-    <p>Don't miss out on the action! Watch our live streams here:</p>
-    <ul>
-        <li><a href="https://youtube.com/@dropzonetourney?si=viuNyO1Qw6L8RFkS">YouTube Live</a></li>
-        <li><a href="https://www.twitch.tv/dropzonetourney">Twitch Live</a></li>
-    </ul>
-</section>
-    </main>
-    
-
- <!-- Footer -->
-<footer>
-    <p>&copy; 2024 DropZoneTourney. All Rights Reserved.</p>
-    <p>Follow us on 
-        <a href="https://discord.gg/HNxhGRRgEE">Discord</a> | 
-        <a href="https://www.instagram.com/dropzonetourney?igsh=MTRvNDdjYzNjdHNwNw==">Instagram</a> | 
-        <a href="https://t.me/DropZoneTourney">Telegram</a> | 
-        <a href="https://www.facebook.com/profile.php?id=61565143952427&mibextid=ZbWKwL">Facebook</a> | 
-        <a href="https://x.com/DropZoneTourney?t=W_36PDln3eSirEARKk4dMA&s=08">X (Twitter)</a> | 
-        <a href="https://whatsapp.com/channel/0029VaiKpDCICVfrGvwq3s2U">WhatsApp</a> | 
-        <a href="https://www.reddit.com/r/Dropzonetourney/s/TMO2lBa295">Reddit</a> | 
-        <a href="https://youtube.com/@dropzonetourney?si=viuNyO1Qw6L8RFkS">YouTube</a> | 
-        <a href="https://www.twitch.tv/dropzonetourney">Twitch</a>
-    </p>
-    <p>Contact Us: <a href="mailto:dropzonetourney@gmail.com">dropzonetourney@gmail.com</a></p>
-</footer>
-
-
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
