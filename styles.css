@@ -1,0 +1,117 @@
+/* General page styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    background-image: url('bgd.jpeg'); /* Add your background image */
+    background-size: cover;
+    background-attachment: fixed; /* Keeps background still */
+}
+
+/* Header section */
+header {
+    padding: 20px;
+    background-color: rgba(209, 130, 65, 0.623); /* Semi-transparent background */
+}
+
+header img {
+    max-width: 150px;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 2.5rem;
+    color: #ff9900;
+}
+
+/* Section styles */
+.section {
+    padding: 50px 20px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Background with transparency */
+    transition: padding 0.5s ease; /* Dynamic padding effect */
+}
+
+.section:hover {
+    padding: 80px 40px; /* Increases padding when hovered */
+}
+
+.about-us {
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly different color */
+}
+
+.tournament-details {
+    background-color: rgba(68, 68, 68, 0.8);
+}
+
+.rules {
+    background-color: rgba(85, 85, 85, 0.8);
+}
+
+.live-stream {
+    background-color: rgba(102, 102, 102, 0.8);
+}
+
+.prizes {
+    background-color: rgba(119, 119, 119, 0.8);
+}
+
+.past-winners {
+    background-color: rgba(136, 136, 136, 0.8);
+}
+
+/* Text animation - slide from the left */
+.animated-text {
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        left: -100%;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+/* Footer styles */
+footer {
+    padding: 20px;
+    background-color: #000;
+    color: #ff9900;
+}
+
+.social-links a {
+    color: #ff9900;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .section {
+        padding: 40px 10px; /* Less padding for smaller screens */
+    }
+
+    .section:hover {
+        padding: 60px 20px; /* Adjust hover effect on mobile */
+    }
+}
